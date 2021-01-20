@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<script src="data.js"></script>-->
+
+    <script src="vue.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <title>WPM</title>
+</head>
+<body id="body">
+<div id="app">
+    <div class="custom-shape-divider-top-1609188428">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                  class="shape-fill"></path>
+        </svg>
+    </div>
+    <p class="words">{{ wordlist }}</p>
+    <input type="text" id="inputt" placeholder="type to start..." v-model="wordInput" v-on:keyup="onKeystroke">
+    <div id="timer">{{ timeLeft }}</div>
+    <div id="redoBT" v-on:click="redoA()">
+        <svg aria-hidden="true" id="redoimg" focusable="false" data-prefix="fas" data-icon="redo-alt"
+             class="svg-inline--fa fa-redo-alt fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg"
+             viewBox="0 0 512 512">
+            <path fill="currentColor"
+                  d="M256.455 8c66.269.119 126.437 26.233 170.859 68.685l35.715-35.715C478.149 25.851 504 36.559 504 57.941V192c0 13.255-10.745 24-24 24H345.941c-21.382 0-32.09-25.851-16.971-40.971l41.75-41.75c-30.864-28.899-70.801-44.907-113.23-45.273-92.398-.798-170.283 73.977-169.484 169.442C88.764 348.009 162.184 424 256 424c41.127 0 79.997-14.678 110.629-41.556 4.743-4.161 11.906-3.908 16.368.553l39.662 39.662c4.872 4.872 4.631 12.815-.482 17.433C378.202 479.813 319.926 504 256 504 119.034 504 8.001 392.967 8 256.002 7.999 119.193 119.646 7.755 256.455 8z"></path>
+        </svg>
+    </div>
+    <div id="wpmm" v-on:event="wordsperm()">WPM: {{ wordsperminute }}</div>
+    <div id="settings" v-on:click="dropdown()">
+        <svg aria-hidden="true" focusable="false" id="settingsimg" data-prefix="fas" data-icon="sliders-h"
+             class="svg-inline--fa fa-sliders-h fa-w-15" role="img" xmlns="http://www.w3.org/2000/svg"
+             viewBox="0 0 512 512">
+            <path fill="currentColor"
+                  d="M496 384H160v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h80v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h336c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160h-80v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h336v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h80c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160H288V48c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16C7.2 64 0 71.2 0 80v32c0 8.8 7.2 16 16 16h208v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h208c8.8 0 16-7.2 16-16V80c0-8.8-7.2-16-16-16z"></path>
+        </svg>
+        <button id="lighttheme" class="button" v-on:click="lighttheme()">Light</button>
+        <button id="darktheme" class="button" v-on:click="darktheme()">Dark</button>
+        <button id="scorebt" v-on:click="score()" class="button" v-on:click="scorebt()">Scores</button>
+    </div>
+    <div></div>
+    <ul id="scorecontainer">
+        
+    </ul>
+</div>
+<script src="main.js"></script>
+</body>
+</html>
